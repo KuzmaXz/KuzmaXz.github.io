@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arun Khajornklang — Community & Player Engagement</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0F1420;
+    --surface:#161D2E;
+    --surface-2:#1B2338;
+    --border:#28304A;
+    --text:#EDEFF5;
+    --muted:#8891A6;
+    --amber:#F5A623;
+    --amber-dim:#8A6222;
+    --green:#3DDC97;
+    --radius:14px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px;}
+
+  /* subtle grid texture */
+  body::before{
+    content:"";
+    position:fixed;inset:0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size:64px 64px;
+    opacity:0.06;
+    pointer-events:none;
+    z-index:0;
+  }
+
+  /* ---- status pill, the recurring signature ---- */
+  .status-pill{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:999px;
+    padding:6px 14px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    color:var(--muted);
+  }
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--green);
+    box-shadow:0 0 8px var(--green);
+    animation:pulse 2s ease-in-out infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
+
+  /* ---- nav ---- */
+  nav{
+    position:sticky;top:0;z-index:10;
+    backdrop-filter:blur(10px);
+    background:rgba(15,20,32,0.85);
+    border-bottom:1px solid var(--border);
+  }
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:64px;}
+  .nav-name{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:16px;}
+  .nav-links{display:flex;gap:28px;font-size:14px;color:var(--muted);}
+  .nav-links a:hover{color:var(--text);}
+  @media(max-width:640px){.nav-links{display:none;}}
+
+  /* ---- hero ---- */
+  header.hero{padding:90px 0 60px;position:relative;z-index:1;}
+  .eyebrow{color:var(--amber);font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:18px;}
+  h1.headline{font-size:44px;font-weight:600;line-height:1.15;letter-spacing:-0.01em;max-width:680px;}
+  h1.headline .hl{color:var(--amber);}
+  .sub{color:var(--muted);font-size:17px;margin-top:20px;max-width:560px;}
+
+  .counter-row{
+    display:flex;gap:14px;margin-top:36px;flex-wrap:wrap;
+  }
+  .counter{
+    background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+    padding:16px 20px;min-width:140px;
+  }
+  .counter .num{font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:600;color:var(--green);}
+  .counter .label{color:var(--muted);font-size:12px;margin-top:4px;}
+
+  .cta-row{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    padding:12px 22px;border-radius:10px;font-size:14px;font-weight:500;
+    border:1px solid var(--border);
+  }
+  .btn-primary{background:var(--amber);color:#1a1204;border:none;}
+  .btn-primary:hover{background:#ffb444;}
+  .btn-ghost{color:var(--text);}
+  .btn-ghost:hover{border-color:var(--amber);}
+
+  /* ---- section shell ---- */
+  section{padding:64px 0;border-top:1px solid var(--border);position:relative;z-index:1;}
+  .section-tag{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--amber);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;}
+  h2.section-title{font-size:28px;font-weight:600;margin-bottom:8px;}
+  .section-desc{color:var(--muted);max-width:600px;margin-bottom:36px;}
+
+  /* ---- philosophy ---- */
+  .manifesto{
+    font-size:20px;line-height:1.75;color:var(--text);max-width:700px;
+  }
+  .manifesto .accent{color:var(--amber);}
+
+  /* ---- case studies (devlog style) ---- */
+  .devlog{
+    border:1px solid var(--border);border-radius:var(--radius);
+    background:var(--surface);
+    margin-bottom:16px;overflow:hidden;
+  }
+  .devlog-head{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:18px 22px;gap:16px;flex-wrap:wrap;
+  }
+  .devlog-tag{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);
+    border:1px solid var(--border);border-radius:6px;padding:3px 8px;
+  }
+  .devlog-title{font-size:17px;font-weight:600;font-family:'Space Grotesk',sans-serif;}
+  .devlog-body{padding:0 22px 20px;color:var(--muted);font-size:15px;line-height:1.7;}
+
+  /* ---- server cards (projects) ---- */
+  .server-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;
+  }
+  .server-card{
+    border:1px solid var(--border);border-radius:var(--radius);
+    background:var(--surface);padding:22px;
+  }
+  .server-card h3{font-size:17px;margin-bottom:4px;}
+  .server-role{color:var(--amber);font-size:13px;font-family:'IBM Plex Mono',monospace;margin-bottom:12px;}
+  .server-desc{color:var(--muted);font-size:14px;margin-bottom:16px;}
+  .server-stats{display:flex;gap:18px;font-family:'IBM Plex Mono',monospace;font-size:13px;}
+  .server-stats span{color:var(--text);font-weight:600;}
+  .server-stats small{color:var(--muted);display:block;font-weight:400;font-size:11px;margin-top:2px;}
+  .server-links{margin-top:14px;display:flex;gap:14px;}
+  .server-links a{font-size:13px;color:var(--green);border-bottom:1px solid transparent;}
+  .server-links a:hover{border-color:var(--green);}
+
+  .misc-row{
+    display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;
+  }
+  .misc-chip{
+    border:1px solid var(--border);border-radius:8px;background:var(--surface-2);
+    padding:10px 14px;font-size:13px;color:var(--muted);
+  }
+  .misc-chip b{color:var(--text);}
+
+  /* ---- skills ---- */
+  .skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;}
+  .skill-group h4{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--amber);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;}
+  .skill-group p{color:var(--muted);font-size:14px;}
+
+  /* ---- contact ---- */
+  .contact-box{
+    border:1px solid var(--border);border-radius:var(--radius);
+    background:linear-gradient(145deg, var(--surface), var(--surface-2));
+    padding:40px;text-align:center;
+  }
+  .contact-box h2{font-size:26px;margin-bottom:10px;}
+  .contact-box p{color:var(--muted);margin-bottom:26px;}
+  .contact-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+  footer{padding:36px 0;text-align:center;color:var(--muted);font-size:13px;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="nav-name">Arun Khajornklang</div>
+    <div class="nav-links">
+      <a href="#work">Case Studies</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="status-pill"><span class="dot"></span> ON ROBLOX SINCE 2012 · SAME ACCOUNT SINCE 2013</div>
+    <h1 class="headline" style="margin-top:22px;">I grew a Discord server from <span class="hl">10,000</span> to over <span class="hl">1,000,000</span> members.</h1>
+    <p class="sub">Community & player engagement, 8+ years, built starting as a teenager, self-taught, no formal training. This is the platform that raised me, so this is the work I take seriously.</p>
+
+    <div class="counter-row">
+      <div class="counter"><div class="num">1.08M</div><div class="label">King Legacy members</div></div>
+      <div class="counter"><div class="num">245K</div><div class="label">Sakura Stand members</div></div>
+      <div class="counter"><div class="num">15+</div><div class="label">communities built or run</div></div>
+      <div class="counter"><div class="num">8+ yrs</div><div class="label">in community work</div></div>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#work">See the case studies</a>
+      <a class="btn btn-ghost" href="#contact">Get in touch</a>
+    </div>
+  </div>
+</header>
+
+<section id="philosophy">
+  <div class="wrap">
+    <div class="section-tag">How I Work</div>
+    <p class="manifesto">Community management isn't moderation logs and event calendars. It's being the <span class="accent">bridge</span> between what developers are building and what players actually need to feel heard. I've watched communities lose trust over a bug or a balance change left unexplained, and rebuild that same trust the moment someone communicated honestly instead. <span class="accent">Silence is what kills a community. Not the problem itself.</span></p>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="section-tag">Devlog</div>
+    <h2 class="section-title">Case Studies</h2>
+    <p class="section-desc">Real incidents, real outcomes. Not hypotheticals.</p>
+
+    <div class="devlog">
+      <div class="devlog-head">
+        <div class="devlog-title">Turning player data into developer action</div>
+        <div class="devlog-tag">KING LEGACY</div>
+      </div>
+      <div class="devlog-body">A change from the lead developer was causing real backlash, and he was reluctant to revisit it. Instead of relaying complaints secondhand, I built a poll to collect structured feedback directly from the community. Over 3,000 players responded. I brought him the actual scale and specifics of the concern, not just "people are upset." He changed the feature based on what the data showed.</div>
+    </div>
+
+    <div class="devlog">
+      <div class="devlog-head">
+        <div class="devlog-title">Re-engaging a lapsed top-tier creator</div>
+        <div class="devlog-tag">KING LEGACY</div>
+      </div>
+      <div class="devlog-body">One of King Legacy's most recognized creators had gone quiet for an extended period. I worked directly with him to re-engage his audience, including personally appearing in his content as an in-game boss and story character. Ongoing, hands-on relationship management, not a one-off ask. His momentum rebuilt significantly.</div>
+    </div>
+
+    <div class="devlog">
+      <div class="devlog-head">
+        <div class="devlog-title">Recovering from a full database loss</div>
+        <div class="devlog-tag">SAKURA STAND</div>
+      </div>
+      <div class="devlog-body">An update rollout caused a complete database loss. I contacted the lead developer directly to bring them back and coordinate a rollback and fix, while managing community communication throughout the incident so confusion didn't turn into panic.</div>
+    </div>
+
+    <div class="devlog">
+      <div class="devlog-head">
+        <div class="devlog-title">Handling a compromised staff account</div>
+        <div class="devlog-tag">FRAME SHRIMP OF HEI</div>
+      </div>
+      <div class="devlog-body">As a consultant on this server, I was pulled in when an admin account was leaked or compromised, a real trust and security risk. I helped lead the response: containing the damage, securing permissions, and communicating clearly so the community didn't lose confidence. The server stabilized without losing member trust.</div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-tag">Live Servers</div>
+    <h2 class="section-title">Communities I've Built & Run</h2>
+    <p class="section-desc">Numbers pulled directly from server insights.</p>
+
+    <div class="server-grid">
+      <div class="server-card">
+        <h3>King Legacy</h3>
+        <div class="server-role">Sole Community Manager · 2019–2026</div>
+        <p class="server-desc">Roblox · scaled from 10K to 1M+, ran YouTube/X, handled translation.</p>
+        <div class="server-stats">
+          <div><span>1,081,377</span><small>members</small></div>
+          <div><span>81,656</span><small>weekly visitors</small></div>
+        </div>
+        <div class="server-links"><a href="https://youtube.com/@kinglegacyrbx" target="_blank">YouTube ↗</a><a href="https://discord.com/invite/kinglegacy" target="_blank">Discord ↗</a></div>
+      </div>
+
+      <div class="server-card">
+        <h3>Sakura Stand</h3>
+        <div class="server-role">Community Manager · 2022–Present</div>
+        <p class="server-desc">Roblox · main community, 320M+ lifetime game visits.</p>
+        <div class="server-stats">
+          <div><span>245,227</span><small>members</small></div>
+          <div><span>31,613</span><small>weekly visitors</small></div>
+        </div>
+        <div class="server-links"><a href="https://discord.com/invite/sakurastand" target="_blank">Discord ↗</a></div>
+      </div>
+
+      <div class="server-card">
+        <h3>Sakura Stand: Trading</h3>
+        <div class="server-role">Community Manager · 2022–Present</div>
+        <p class="server-desc">Dedicated trading/marketplace community, built alongside the main server.</p>
+        <div class="server-stats">
+          <div><span>142,077</span><small>members</small></div>
+          <div><span>12,679</span><small>weekly visitors</small></div>
+        </div>
+      </div>
+
+      <div class="server-card">
+        <h3>Verse Piece</h3>
+        <div class="server-role">Consultant / Server Builder</div>
+        <p class="server-desc">Helped set up and consulted long-term. Still retain admin access today.</p>
+        <div class="server-stats">
+          <div><span>98,726</span><small>members</small></div>
+          <div><span>3,982</span><small>weekly visitors</small></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="misc-row">
+      <div class="misc-chip"><b>Legacy Piece</b> — 25,821 members, 14,195 weekly</div>
+      <div class="misc-chip"><b>Second Piece</b> — 57,039 members</div>
+      <div class="misc-chip"><b>Second Verse</b> — 7,272 members</div>
+      <div class="misc-chip"><b>Frame Shrimp of Hei</b> — 50,704 members</div>
+      <div class="misc-chip"><b>Anime Racket</b> — 9,594 members</div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-tag">Toolkit</div>
+    <h2 class="section-title">Skills & Fluencies</h2>
+
+    <div class="skill-grid">
+      <div class="skill-group">
+        <h4>Community</h4>
+        <p>Large-scale Discord management, moderation systems, event planning, volunteer/admin leadership, creator & KOL relationships.</p>
+      </div>
+      <div class="skill-group">
+        <h4>Technical</h4>
+        <p>Custom Discord bots (Node.js, discord.js v14), Python data pipelines, AI-driven workflows (Claude, daily use beyond basic prompting).</p>
+      </div>
+      <div class="skill-group">
+        <h4>Content & Growth</h4>
+        <p>Multi-platform strategy (YouTube, TikTok, IG, X, Facebook), performance reporting, sentiment analysis.</p>
+      </div>
+      <div class="skill-group">
+        <h4>Language</h4>
+        <p>Native Thai. C2 English (EF SET Certified, 73/100). Deep, current insight into the Thai gaming market.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-box">
+      <h2>Let's talk.</h2>
+      <p>Open to Community Manager, Developer/Creator Relations, and Player Engagement roles.</p>
+      <div class="contact-links">
+        <a class="btn btn-primary" href="mailto:arunkhajohnkhank@gmail.com">Email Me</a>
+        <a class="btn btn-ghost" href="https://linkedin.com/in/arunkhajornklang" target="_blank">LinkedIn ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>Bangkok, Thailand · Built by hand, updated as the work continues.</footer>
+
+</body>
+</html>
