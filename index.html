@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arun Khajornklang — Community & Player Engagement</title>
+<meta name="description" content="Arun Khajornklang: gaming community management since 2019. Discord operations, player support, creator partnerships and community automation. Based in Thailand, open to remote work.">
+<meta name="theme-color" content="#0F1420">
+<title>Arun Khajornklang — Community Manager & Operations Lead</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -13,7 +15,7 @@
     --surface-2:#1B2338;
     --border:#28304A;
     --text:#EDEFF5;
-    --muted:#8891A6;
+    --muted:#A9B3C8;
     --amber:#F5A623;
     --amber-dim:#8A6222;
     --green:#3DDC97;
@@ -174,11 +176,42 @@
   .contact-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
 
   footer{padding:36px 0;text-align:center;color:var(--muted);font-size:13px;}
+
+  /* Responsive refinements and keyboard accessibility. */
+  section { scroll-margin-top:90px; }
+  a:focus-visible { outline:3px solid var(--green); outline-offset:5px; }
+  .skip-link { position:fixed; top:-100px; left:16px; z-index:100; background:var(--amber); color:#111; padding:12px; }
+  .skip-link:focus { top:12px; }
+  .hero-proof { max-width:670px; font-size:20px; margin-top:24px; }
+  .hero-proof strong { color:var(--green); }
+  .availability { color:var(--muted); font-size:13px; margin-top:20px; max-width:660px; }
+  .counter-row { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); }
+  .counter { min-width:0; padding:18px 16px; }
+  .counter .num { font-size:24px; }
+  .devlog-body p + p { margin-top:12px; }
+  .devlog-body strong { color:var(--text); }
+  .contact-box { overflow-wrap:anywhere; }
+  @media(max-width:640px) {
+    nav .wrap { height:auto; min-height:64px; flex-wrap:wrap; padding-top:12px; padding-bottom:12px; gap:12px; }
+    .nav-links { display:flex; gap:20px; flex-wrap:wrap; font-size:12px; }
+    header.hero { padding:48px 0; }
+    h1.headline { font-size:clamp(30px,8vw,44px); }
+    .counter-row { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .counter .num { font-size:22px; }
+    .server-grid { grid-template-columns:minmax(0,1fr); }
+    .contact-box { padding:28px 20px; }
+    section { padding:44px 0; scroll-margin-top:120px; }
+    .status-pill { font-size:11px; }
+    .cta-row .btn { flex:1 1 auto; text-align:center; }
+  }
+  @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .dot { animation:none; } }
+
 </style>
 </head>
 <body>
 
-<nav>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav aria-label="Main navigation">
   <div class="wrap">
     <div class="nav-name">Arun Khajornklang</div>
     <div class="nav-links">
@@ -190,22 +223,24 @@
   </div>
 </nav>
 
+<main id="main">
 <header class="hero">
   <div class="wrap">
-    <div class="status-pill"><span class="dot"></span> ON ROBLOX SINCE 2012 · SAME ACCOUNT SINCE 2013</div>
-    <h1 class="headline" style="margin-top:22px;">I grew a Discord server from <span class="hl">10,000</span> to over <span class="hl">1,000,000</span> members.</h1>
-    <p class="sub">Community & player engagement, 8+ years, built starting as a teenager, self-taught, no formal training. This is the platform that raised me, so this is the work I take seriously.</p>
+    <div class="status-pill"><span class="dot"></span> OPEN TO REMOTE OPPORTUNITIES</div>
+    <h1 class="headline" style="margin-top:22px;">Community Manager<br><span class="hl">&amp; Operations Lead.</span></h1>
+    <p class="sub">Community management since 2019. I lead gaming communities, coordinate moderators, support creators and turn player feedback into developer action.</p>
+<p class="hero-proof">Led community operations as King Legacy’s Discord grew from <strong>10,000 to over 1 million members.</strong></p>
+<p class="availability">Samut Prakan, Thailand · UTC+7 · Full-time &amp; contract preferred · Part-time welcome</p>
 
     <div class="counter-row">
-      <div class="counter"><div class="num">1.08M</div><div class="label">King Legacy members</div></div>
-      <div class="counter"><div class="num">245K</div><div class="label">Sakura Stand members</div></div>
-      <div class="counter"><div class="num">15+</div><div class="label">communities built or run</div></div>
-      <div class="counter"><div class="num">8+ yrs</div><div class="label">community management</div></div>
-      <div class="counter"><div class="num">3+ yrs</div><div class="label">social media</div></div>
+      <div class="counter"><div class="num">1M+</div><div class="label">King Legacy community scale</div></div>
+      <div class="counter"><div class="num">15+</div><div class="label">communities built or supported</div></div>
+      <div class="counter"><div class="num">3,000+</div><div class="label">responses to a player poll</div></div>
+      <div class="counter"><div class="num">Since 2019</div><div class="label">community management</div></div>
     </div>
-
     <div class="cta-row">
       <a class="btn btn-primary" href="#work">See the case studies</a>
+      <a class="btn btn-ghost" href="Arun_Khajornklang_Resume.pdf" download>Download Resume ↓</a>
       <a class="btn btn-ghost" href="#contact">Get in touch</a>
     </div>
   </div>
@@ -214,22 +249,22 @@
 <section id="philosophy">
   <div class="wrap">
     <div class="section-tag">How I Work</div>
-    <p class="manifesto">Community management isn't moderation logs and event calendars. It's being the <span class="accent">bridge</span> between what developers are building and what players actually need to feel heard. I've watched communities lose trust over a bug or a balance change left unexplained, and rebuild that same trust the moment someone communicated honestly instead. <span class="accent">Silence is what kills a community. Not the problem itself.</span></p>
+    <p class="manifesto">I connect <span class="accent">players, moderators, creators and developers.</span> My work combines day-to-day community operations with clear communication during updates and incidents, structured player feedback and practical tools that help teams handle repetitive work.</p>
   </div>
 </section>
 
 <section id="work">
   <div class="wrap">
-    <div class="section-tag">Devlog</div>
+    <div class="section-tag">Selected work</div>
     <h2 class="section-title">Case Studies</h2>
-    <p class="section-desc">Real incidents, real outcomes. Not hypotheticals.</p>
+    <p class="section-desc">Examples of player support, feedback, creator collaboration and operational problem-solving.</p>
 
     <div class="devlog">
       <div class="devlog-head">
         <div class="devlog-title">Turning player data into developer action</div>
         <div class="devlog-tag">KING LEGACY</div>
       </div>
-      <div class="devlog-body">A change from the lead developer was causing real backlash, and he was reluctant to revisit it. Instead of relaying complaints secondhand, I built a poll to collect structured feedback directly from the community. Over 3,000 players responded. I brought him the actual scale and specifics of the concern, not just "people are upset." He changed the feature based on what the data showed.</div>
+      <div class="devlog-body"><p><strong>Situation</strong> A game change prompted substantial player concern.</p><p><strong>My work</strong> I collected structured feedback through a poll with over 3,000 responses and shared the findings directly with the developers.</p><p><strong>Outcome</strong> The feedback informed changes to the feature. This became part of how I brought community concerns into update discussions.</p></div>
     </div>
 
     <div class="devlog">
@@ -237,7 +272,7 @@
         <div class="devlog-title">Re-engaging a lapsed top-tier creator</div>
         <div class="devlog-tag">KING LEGACY</div>
       </div>
-      <div class="devlog-body">One of King Legacy's most recognized creators had gone quiet for an extended period. I worked directly with him to re-engage his audience, including personally appearing in his content as an in-game boss and story character. Ongoing, hands-on relationship management, not a one-off ask. His momentum rebuilt significantly.</div>
+      <div class="devlog-body"><p><strong>Situation</strong> An established King Legacy creator had been less active.</p><p><strong>My work</strong> I worked directly with the creator on content, including appearing as an in-game boss and story character.</p><p><strong>Contribution</strong> Hands-on content collaboration and ongoing creator relationship management.</p></div>
     </div>
 
     <div class="devlog">
@@ -245,7 +280,7 @@
         <div class="devlog-title">Recovering from a full database loss</div>
         <div class="devlog-tag">SAKURA STAND</div>
       </div>
-      <div class="devlog-body">An update rollout caused a complete database loss. I contacted the lead developer directly to bring them back and coordinate a rollback and fix, while managing community communication throughout the incident so confusion didn't turn into panic.</div>
+      <div class="devlog-body"><p><strong>Situation</strong> An update caused a database-loss incident at Sakura Stand.</p><p><strong>My work</strong> I contacted the lead developer, helped coordinate the rollback and fix, and handled community communication during the response.</p><p><strong>Contribution</strong> Connected technical recovery work with player-facing communication.</p></div>
     </div>
 
     <div class="devlog">
@@ -253,38 +288,45 @@
         <div class="devlog-title">Handling a compromised staff account</div>
         <div class="devlog-tag">FRAME SHRIMP OF HEI</div>
       </div>
-      <div class="devlog-body">As a consultant on this server, I was pulled in when an admin account was leaked or compromised, a real trust and security risk. I helped lead the response: containing the damage, securing permissions, and communicating clearly so the community didn't lose confidence. The server stabilized without losing member trust.</div>
+      <div class="devlog-body"><p><strong>Situation</strong> A staff account was compromised in a community I advised.</p><p><strong>My work</strong> I helped contain the damage, secure permissions and communicate during the response.</p><p><strong>Outcome</strong> Helped stabilize the server and its operations.</p></div>
     </div>
+
+    <article class="devlog">
+      <div class="devlog-head"><h3 class="devlog-title">Restoring progress for approximately 1,000 players</h3><span class="devlog-tag">KING LEGACY</span></div>
+      <div class="devlog-body"><p><strong>Situation</strong> Players lost items and game progress following a data-loss incident.</p><p><strong>My work</strong> I restored lost items and progress for approximately 1,000 players over 2–3 days while also investigating bugs.</p><p><strong>Outcome</strong> Completed player restorations during a concentrated recovery effort. Item and progress recovery has also been a regular part of my work across games.</p></div>
+    </article>
+    <article class="devlog">
+      <div class="devlog-head"><h3 class="devlog-title">Supporting review of 800+ applications</h3><span class="devlog-tag">OPERATIONS &amp; AUTOMATION</span></div>
+      <div class="devlog-body"><p><strong>Task</strong> Organize a large pool of applications for review.</p><p><strong>My work</strong> Built an AI-assisted Python workflow to score and deduplicate more than 800 applications.</p><p><strong>Contribution</strong> Structured application data for review, alongside my broader work with Discord bots and community administration tools.</p></div>
+    </article>
   </div>
 </section>
 
 <section id="projects">
   <div class="wrap">
-    <div class="section-tag">Live Servers</div>
-    <h2 class="section-title">Communities I've Built & Run</h2>
-    <p class="section-desc">Numbers pulled directly from server insights.</p>
+    <div class="section-tag">Community experience</div>
+    <h2 class="section-title">Communities I’ve Built &amp; Supported</h2>
+    <p class="section-desc">Selected current and past work. Member counts are historical snapshots from my recorded server insights, not live totals; capture dates are not shown. Community memberships may overlap.</p>
 
     <div class="server-grid">
       <div class="server-card">
         <h3>King Legacy</h3>
         <div class="server-role">Sole Community Manager · 2019–2026</div>
-        <p class="server-desc">Roblox · scaled from 10K to 1M+, ran YouTube/X, handled translation.</p>
+        <p class="server-desc">Led community operations during growth from 10K to 1M+ members, managed YouTube/X and coordinated multilingual communication.</p>
         <div class="server-stats">
-          <div><span>1,081,377</span><small>members</small></div>
-          <div><span>81,656</span><small>weekly visitors</small></div>
+          <div><span>1,081,377</span><small>members · recorded snapshot</small></div>
         </div>
-        <div class="server-links"><a href="https://youtube.com/@kinglegacyrbx" target="_blank">YouTube ↗</a><a href="https://discord.com/invite/kinglegacy" target="_blank">Discord ↗</a></div>
+        <div class="server-links"><a href="https://youtube.com/@kinglegacyrbx" target="_blank" rel="noopener noreferrer">YouTube ↗</a><a href="https://discord.com/invite/kinglegacy" target="_blank" rel="noopener noreferrer">Discord ↗</a></div>
       </div>
 
       <div class="server-card">
         <h3>Sakura Stand</h3>
         <div class="server-role">Community Manager · 2022–Present</div>
-        <p class="server-desc">Roblox · main community, 320M+ lifetime game visits.</p>
+        <p class="server-desc">Ongoing community management, player support and communication with the development team.</p>
         <div class="server-stats">
-          <div><span>245,227</span><small>members</small></div>
-          <div><span>31,613</span><small>weekly visitors</small></div>
+          <div><span>245,227</span><small>members · recorded snapshot</small></div>
         </div>
-        <div class="server-links"><a href="https://discord.com/invite/sakurastand" target="_blank">Discord ↗</a></div>
+        <div class="server-links"><a href="https://discord.com/invite/sakurastand" target="_blank" rel="noopener noreferrer">Discord ↗</a></div>
       </div>
 
       <div class="server-card">
@@ -292,18 +334,16 @@
         <div class="server-role">Community Manager · 2022–Present</div>
         <p class="server-desc">Dedicated trading/marketplace community, built alongside the main server.</p>
         <div class="server-stats">
-          <div><span>142,077</span><small>members</small></div>
-          <div><span>12,679</span><small>weekly visitors</small></div>
+          <div><span>142,077</span><small>members · recorded snapshot</small></div>
         </div>
       </div>
 
       <div class="server-card">
         <h3>Verse Piece</h3>
         <div class="server-role">Consultant / Server Builder</div>
-        <p class="server-desc">Helped set up and consulted long-term. Still retain admin access today.</p>
+        <p class="server-desc">Server setup and ongoing operational consultation.</p>
         <div class="server-stats">
-          <div><span>98,726</span><small>members</small></div>
-          <div><span>3,982</span><small>weekly visitors</small></div>
+          <div><span>98,726</span><small>members · recorded snapshot</small></div>
         </div>
       </div>
       <div class="server-card">
@@ -311,8 +351,7 @@
         <div class="server-role">Community Manager</div>
         <p class="server-desc">Community management and social media.</p>
         <div class="server-stats">
-          <div><span>25,821</span><small>members</small></div>
-          <div><span>14,195</span><small>weekly visitors</small></div>
+          <div><span>25,821</span><small>members · recorded snapshot</small></div>
         </div>
       </div>
 
@@ -321,8 +360,7 @@
         <div class="server-role">Community Manager</div>
         <p class="server-desc">Community management and social media.</p>
         <div class="server-stats">
-          <div><span>57,039</span><small>members</small></div>
-          <div><span>~2,400</span><small>weekly visitors</small></div>
+          <div><span>57,039</span><small>members · recorded snapshot</small></div>
         </div>
       </div>
 
@@ -331,8 +369,7 @@
         <div class="server-role">Community Manager</div>
         <p class="server-desc">Community management and social media for this in-development title.</p>
         <div class="server-stats">
-          <div><span>7,272</span><small>members</small></div>
-          <div><span>4,655</span><small>weekly visitors</small></div>
+          <div><span>7,272</span><small>members · recorded snapshot</small></div>
         </div>
       </div>
 
@@ -341,8 +378,7 @@
         <div class="server-role">Consultant / Server Builder</div>
         <p class="server-desc">Helped set up the server, managed social media, led response to a compromised staff account.</p>
         <div class="server-stats">
-          <div><span>50,704</span><small>members</small></div>
-          <div><span>10,545</span><small>weekly visitors</small></div>
+          <div><span>50,704</span><small>members · recorded snapshot</small></div>
         </div>
       </div>
 
@@ -351,8 +387,7 @@
         <div class="server-role">Manager / Development Support</div>
         <p class="server-desc">A friend's passion project. Assisted with development, social media, one of its managers.</p>
         <div class="server-stats">
-          <div><span>9,594</span><small>members</small></div>
-          <div><span>1,720</span><small>weekly visitors</small></div>
+          <div><span>9,594</span><small>members · recorded snapshot</small></div>
         </div>
       </div>
     </div>
@@ -367,11 +402,11 @@
     <div class="skill-grid">
       <div class="skill-group">
         <h4>Community</h4>
-        <p>Large-scale Discord management, moderation systems, event planning, volunteer/admin leadership, creator & KOL relationships.</p>
+        <p>Large-scale Discord operations, moderation systems, team coordination, event planning, creator relationships and multilingual community structures spanning 12 languages.</p>
       </div>
       <div class="skill-group">
         <h4>Technical</h4>
-        <p>Custom Discord bots (Node.js, discord.js v14), Python data pipelines, AI-driven workflows (Claude, daily use beyond basic prompting).</p>
+        <p>AI-assisted development of Discord bots with Node.js and discord.js, Python workflows, application review tools and community administration automation.</p>
       </div>
       <div class="skill-group">
         <h4>Content & Growth</h4>
@@ -389,17 +424,18 @@
   <div class="wrap">
     <div class="contact-box">
       <h2>Let's talk.</h2>
-      <p>Open to Community Manager, Developer/Creator Relations, and Player Engagement roles.</p>
+      <p>Open to Community Manager, Community Operations Lead, Creator Relations and Player Engagement roles. Based in Thailand and available for remote teams worldwide.</p>
       <div class="contact-links">
         <a class="btn btn-primary" href="mailto:arunkhajohnkhank@gmail.com">Email Me</a>
-        <a class="btn btn-ghost" href="https://linkedin.com/in/arunkhajornklang" target="_blank">LinkedIn ↗</a>
+        <a class="btn btn-ghost" href="https://linkedin.com/in/arunkhajornklang" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
       </div>
       <p style="margin-top:18px;font-size:13px;color:var(--muted);font-family:'IBM Plex Mono',monospace;">arunkhajohnkhank@gmail.com</p>
     </div>
   </div>
 </section>
 
-<footer>Samut Prakan, Thailand · Built by hand, updated as the work continues.</footer>
+</main>
+<footer>Samut Prakan, Thailand · Community management since 2019 · Thai &amp; English</footer>
 
 </body>
 </html>
