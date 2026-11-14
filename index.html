@@ -206,6 +206,19 @@
   }
   @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .dot { animation:none; } }
 
+
+  .community-summary{border:1px solid var(--border);border-left:3px solid var(--green);border-radius:var(--radius);background:var(--surface);padding:22px;margin-bottom:28px;}
+  .community-summary strong{display:block;font:600 clamp(26px,6vw,36px) 'IBM Plex Mono',monospace;color:var(--green);}
+  .community-summary span{font-size:14px;color:var(--text);}
+  .community-summary p{font-size:13px;color:var(--muted);margin-top:12px;max-width:750px;}
+  .community-heading{font-size:19px;margin:30px 0 16px;}
+  .server-card{display:flex;flex-direction:column;}
+  .server-stats{margin-top:auto;}
+  .other-projects{margin-top:24px;padding:20px;border:1px solid var(--border);border-radius:var(--radius);color:var(--muted);font-size:14px;}
+  .other-projects summary{cursor:pointer;color:var(--text);font-weight:600;}
+  .other-projects p{margin-top:12px;}
+  summary:focus-visible{outline:3px solid var(--green);outline-offset:5px;}
+
 </style>
 </head>
 <body>
@@ -292,6 +305,11 @@
     </div>
 
     <article class="devlog">
+      <div class="devlog-head"><h3 class="devlog-title">Helping regain control of a compromised server</h3><span class="devlog-tag">AZURE LATCH</span></div>
+      <div class="devlog-body"><p><strong>Situation</strong> Social engineering compromised developer and staff accounts, allowing attackers to take over the server.</p><p><strong>My work</strong> As a consultant with authorized moderation access, I banned the attackers and removed their access.</p><p><strong>Outcome</strong> Helped the team regain control of its community.</p></div>
+    </article>
+
+    <article class="devlog">
       <div class="devlog-head"><h3 class="devlog-title">Restoring progress for approximately 1,000 players</h3><span class="devlog-tag">KING LEGACY</span></div>
       <div class="devlog-body"><p><strong>Situation</strong> Players lost items and game progress following a data-loss incident.</p><p><strong>My work</strong> I restored lost items and progress for approximately 1,000 players over 2–3 days while also investigating bugs.</p><p><strong>Outcome</strong> Completed player restorations during a concentrated recovery effort. Item and progress recovery has also been a regular part of my work across games.</p></div>
     </article>
@@ -305,92 +323,79 @@
 <section id="projects">
   <div class="wrap">
     <div class="section-tag">Community experience</div>
-    <h2 class="section-title">Communities I’ve Built &amp; Supported</h2>
-    <p class="section-desc">Selected current and past work. Member counts are historical snapshots from my recorded server insights, not live totals; capture dates are not shown. Community memberships may overlap.</p>
-
-    <div class="server-grid">
-      <div class="server-card">
-        <h3>King Legacy</h3>
-        <div class="server-role">Sole Community Manager · 2019–2026</div>
-        <p class="server-desc">Led community operations during growth from 10K to 1M+ members, managed YouTube/X and coordinated multilingual communication.</p>
-        <div class="server-stats">
-          <div><span>1,081,377</span><small>members · recorded snapshot</small></div>
-        </div>
-        <div class="server-links"><a href="https://youtube.com/@kinglegacyrbx" target="_blank" rel="noopener noreferrer">YouTube ↗</a><a href="https://discord.com/invite/kinglegacy" target="_blank" rel="noopener noreferrer">Discord ↗</a></div>
-      </div>
-
-      <div class="server-card">
-        <h3>Sakura Stand</h3>
-        <div class="server-role">Community Manager · 2022–Present</div>
-        <p class="server-desc">Ongoing community management, player support and communication with the development team.</p>
-        <div class="server-stats">
-          <div><span>245,227</span><small>members · recorded snapshot</small></div>
-        </div>
-        <div class="server-links"><a href="https://discord.com/invite/sakurastand" target="_blank" rel="noopener noreferrer">Discord ↗</a></div>
-      </div>
-
-      <div class="server-card">
-        <h3>Sakura Stand: Trading</h3>
-        <div class="server-role">Community Manager · 2022–Present</div>
-        <p class="server-desc">Dedicated trading/marketplace community, built alongside the main server.</p>
-        <div class="server-stats">
-          <div><span>142,077</span><small>members · recorded snapshot</small></div>
-        </div>
-      </div>
-
-      <div class="server-card">
-        <h3>Verse Piece</h3>
-        <div class="server-role">Consultant / Server Builder</div>
-        <p class="server-desc">Server setup and ongoing operational consultation.</p>
-        <div class="server-stats">
-          <div><span>98,726</span><small>members · recorded snapshot</small></div>
-        </div>
-      </div>
-      <div class="server-card">
-        <h3>Legacy Piece</h3>
-        <div class="server-role">Community Manager</div>
-        <p class="server-desc">Community management and social media.</p>
-        <div class="server-stats">
-          <div><span>25,821</span><small>members · recorded snapshot</small></div>
-        </div>
-      </div>
-
-      <div class="server-card">
-        <h3>Second Piece</h3>
-        <div class="server-role">Community Manager</div>
-        <p class="server-desc">Community management and social media.</p>
-        <div class="server-stats">
-          <div><span>57,039</span><small>members · recorded snapshot</small></div>
-        </div>
-      </div>
-
-      <div class="server-card">
-        <h3>Second Verse</h3>
-        <div class="server-role">Community Manager</div>
-        <p class="server-desc">Community management and social media for this in-development title.</p>
-        <div class="server-stats">
-          <div><span>7,272</span><small>members · recorded snapshot</small></div>
-        </div>
-      </div>
-
-      <div class="server-card">
-        <h3>Frame Shrimp of Hei</h3>
-        <div class="server-role">Consultant / Server Builder</div>
-        <p class="server-desc">Helped set up the server, managed social media, led response to a compromised staff account.</p>
-        <div class="server-stats">
-          <div><span>50,704</span><small>members · recorded snapshot</small></div>
-        </div>
-      </div>
-
-      <div class="server-card">
-        <h3>Anime Racket</h3>
-        <div class="server-role">Manager / Development Support</div>
-        <p class="server-desc">A friend's passion project. Assisted with development, social media, one of its managers.</p>
-        <div class="server-stats">
-          <div><span>9,594</span><small>members · recorded snapshot</small></div>
-        </div>
-      </div>
+    <h2 class="section-title">Communities I've Built &amp; Supported</h2>
+    <p class="section-desc">A selection from 15+ gaming communities where I have worked in community management, staff leadership, server setup or consulting.</p>
+    <div class="community-summary">
+      <div><strong>2,161,795</strong><span>combined server memberships across 8 linked servers</span></div>
+      <p>Approximate member counts checked through Discord's public invite data on November 15, 2026. People may belong to more than one server. These are current server sizes, not unique people reached or growth attributed entirely to my work. Some roles have ended.</p>
     </div>
+    <h3 class="community-heading">Core community management</h3>
+    <div class="server-grid">
+      <article class="server-card">
+        <h3>King Legacy</h3>
+        <div class="server-role">Sole Community Manager | 2019-April 2026</div>
+        <p class="server-desc">Led game and Discord community operations as the server grew from 10,000 to over 1 million members. Coordinated moderators, player support, creator relationships and feedback for developers.</p>
+        <div class="server-stats"><div><span>1,100,391</span><small>members | November 15, 2026 snapshot</small></div></div>
+        <div class="server-links"><a href="https://discord.com/servers/king-legacy-658675654799130624" target="_blank" rel="noopener noreferrer">View Discord community &#8599;</a></div>
+      </article>
+      <article class="server-card">
+        <h3>Sakura Stand: Main</h3>
+        <div class="server-role">Community Manager | 2022-Present</div>
+        <p class="server-desc">Manage the main game community, support players and work with developers on updates, feedback and incident communication.</p>
+        <div class="server-stats"><div><span>237,616</span><small>members | November 15, 2026 snapshot</small></div></div>
+        <div class="server-links"><a href="https://discord.gg/sakurastand" target="_blank" rel="noopener noreferrer">View Discord community &#8599;</a></div>
+      </article>
+      <article class="server-card">
+        <h3>Sakura Stand: Trading</h3>
+        <div class="server-role">Community Manager</div>
+        <p class="server-desc">Helped build and manage the dedicated trading community alongside the main Sakura Stand server.</p>
+        <div class="server-stats"><div><span>137,494</span><small>members | November 15, 2026 snapshot</small></div></div>
+        <div class="server-links"><a href="https://discord.gg/sstrading" target="_blank" rel="noopener noreferrer">View Discord community &#8599;</a></div>
+      </article>
+    </div>
+    <h3 class="community-heading">Staff leadership, server builds &amp; consulting</h3>
+    <div class="server-grid">
+      <article class="server-card">
+        <h3>Azure Latch</h3>
+        <div class="server-role">Consultant | Incident response</div>
+        <p class="server-desc">Helped regain control of the server after developer and staff accounts were compromised through social engineering. Used authorized moderation permissions to ban attackers and remove their access.</p>
+        <div class="server-stats"><div><span>525,831</span><small>members | November 15, 2026 snapshot</small></div></div>
+        <div class="server-links"><a href="https://discord.gg/azl" target="_blank" rel="noopener noreferrer">View Discord community &#8599;</a></div>
+      </article>
+      <article class="server-card">
+        <h3>Verse Piece</h3>
+        <div class="server-role">Server builder | Former consultant</div>
+        <p class="server-desc">Built the Discord server from scratch and provided operational advice. No longer oversee the community.</p>
+        <div class="server-stats"><div><span>92,386</span><small>members | November 15, 2026 snapshot</small></div></div>
+        <div class="server-links"><a href="https://discord.gg/p79GqBmGKx" target="_blank" rel="noopener noreferrer">View Discord community &#8599;</a></div>
+      </article>
+      <article class="server-card">
+        <h3>Second Piece</h3>
+        <div class="server-role">Chief of Staff</div>
+        <p class="server-desc">Held a Chief of Staff role supporting the community and its staff.</p>
+        <div class="server-stats"><div><span>54,138</span><small>members | November 15, 2026 snapshot</small></div></div>
+        <div class="server-links"><a href="https://discord.gg/D9f9nZaJ3h" target="_blank" rel="noopener noreferrer">View Discord community &#8599;</a></div>
+      </article>
+      <article class="server-card">
+        <h3>Another Piece</h3>
+        <div class="server-role">Server builder</div>
+        <p class="server-desc">Built the Discord server from scratch. My contribution was server setup rather than ongoing community management.</p>
+        <div class="server-stats"><div><span>7,032</span><small>members | November 15, 2026 snapshot</small></div></div>
+        <div class="server-links"><a href="https://discord.gg/BgGekDA2EV" target="_blank" rel="noopener noreferrer">View Discord community &#8599;</a></div>
+      </article>
+      <article class="server-card">
+        <h3>Second Verse</h3>
+        <div class="server-role">Server builder | Former Community Manager</div>
+        <p class="server-desc">Built the Discord server and managed the community for a period during its development.</p>
+        <div class="server-stats"><div><span>6,907</span><small>members | November 15, 2026 snapshot</small></div></div>
+        <div class="server-links"><a href="https://discord.gg/5Y3gj5e4pq" target="_blank" rel="noopener noreferrer">View Discord community &#8599;</a></div>
+      </article>
+    </div>
+    <details class="other-projects">
+      <summary>Additional community experience</summary>
+      <p>Legacy Piece: community management and social media. Frame Shrimp of Hei: server setup, consulting and incident support. Anime Racket: management and development support.</p>
+      <p>These projects are part of my broader experience and are not included in the verified member total above.</p>
+    </details>
   </div>
 </section>
 
